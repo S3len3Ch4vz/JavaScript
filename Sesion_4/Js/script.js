@@ -107,3 +107,129 @@ Imprimir en consola el siguiente patrón
 *********
 **********
 */
+
+/* -------------- Parte 2 de la sesión 4 en la sesión 5 ---------------- */
+
+
+
+// 💪  Deducir lo que s debe hacer con base en el input y el output
+
+// input: 'a very large string'
+// output: 'A VeRy lArGe sTrInG
+// input: 'abcdefg'
+// output: 'AbCdEfG
+
+// function evaluateCharacter( completeString ){
+//     var characterCode = Math.floor( Math.random() * (91 - 48) + 48 )
+//     var character = String.fromCharCode( characterCode )
+//     return !completeString.includes(character) ? character : evaluateCharacter( completeString )
+// }
+
+// function createRandomString ( charactersQty ){
+//     var result = ""
+//     while( result.length < charactersQty ){
+//         result += evaluateCharacter(result)
+//     }
+//     console.log('result ', result)
+//     console.log('length ', result.length )
+// }
+
+
+
+
+
+
+// const text =  "Cada estudiante tiene su ritmo, cada estudiante tiene su talento, y cada estudiante complementa al estudiante que tiene a su lado";
+
+// function busqueda (texto, palabraAbuscar) {
+
+//     let expresion = new RegExp(`[${palabraAbuscar}]`,'g');
+//     console.log(expresion)
+
+//     // console.log(expresion, 'expresion')
+//     const result = texto.match(expresion);
+//     console.log(result);
+// };
+
+// busqueda(text, 'aeiou')
+
+
+
+// Solicitar al usuario ingresar un numero
+// Crear una funcion que genere un string con caracteres aleatorios, 
+// la longitud del string debe ser igual que el numero que ingreso el usuario
+
+// input : 6
+// output: '6AQX>H:'
+
+
+// Preguntar al usuario un numero 
+// Crear la funcion 
+// Generar un numero aleatorio 
+// Covertir el numero aleatorio en un caracter o un String
+// Repetir la conversion del dato las veces que indique el usuario
+// concatenar cada nuevo caracter
+// mostrar en consola el string generado
+
+// const numberFromUser = Number(prompt('Eligue un numero'));
+
+// function createRandomString () {
+//     const numberRandom = Math.floor(Math.random() * (90 - 48) + 48);
+//     const newString = String.fromCharCode(numberRandom );
+//     // console.log(newString)
+//     return newString;
+// }
+
+// let result = '';
+// for (let i = 0; i < numberFromUser; i++) {
+//     result += createRandomString()
+//     console.log(result)
+// }
+// createRandomString()
+
+// String.fromCharCode(numberRandom, num ,numq )
+
+
+// input: 'a very large string'
+// output: 'A VeRy lArGe sTrInG'
+
+// input: 'abcdefg'
+// output: 'AbCdEfG
+
+// -pedir el string al usuario
+// recorrer el la cadena
+
+
+// function eventToUpperCase () {
+//     let input = prompt('ingresa palabras');
+//     let output = '';
+
+//     for (let i = 0; i < input.length; i++) {
+//         if ( i % 2 == 0) {
+//             output += input.charAt(i).toUpperCase();
+//         } else {
+//             output += input.charAt(i).toLowerCase();
+//         } 
+        
+//     }
+//     console.log(output)
+// };
+
+function eventToUpperCase () {
+    let input = prompt('ingresa palabras');
+
+    const newInput = input.split('');
+    let output = '';
+
+    for (let i = 0; i < newInput.length; i++) {
+        if ( i % 2 == 0) {
+            output += input.charAt(i).toUpperCase();
+        } else {
+            output += input.charAt(i).toLowerCase();
+        } 
+        
+    }
+    console.log(output)
+};
+
+eventToUpperCase();
