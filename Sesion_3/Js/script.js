@@ -43,7 +43,7 @@ Ejercicio 4:
 */
 let estudiante ='Cada estudiante tiene su ritmo, cada estudiante tiene su talento, y cada estudiante complementa al estudiante que tiene a su lado';
 let covertstudent=estudiante.search('estudiante');
-let overwrite=estudiante.replace("estudiante", "Koder");
+let overwrite=estudiante.replace("estudiante", "Koder/g");
 console.log(covertstudent);
 console.log(overwrite);
 /*

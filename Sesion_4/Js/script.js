@@ -87,11 +87,13 @@ Imprimir en consola la suma total de todos los digitos de una cantidad p.ej. "12
 //Iniciar un ciclo para repitirse hasta la cantidad inicializada 
 //Iniciar una variable suma para sumar la variable inicializada con 10 y la controladora
 //Imprimir el resultado de la sumas. 
-let sumas;
+let sumas=0;
 let cantidad=prompt("Escribe un numero");
 for (i=1;i<=cantidad;i++){
-    sumas=(i)+i++;
-    console.log(`${sumas}` );
+    if (i<=cantidad){
+        sumas=(cantidad*(cantidad+1)/22);
+    }
+    console.log(`Las sumas de los numero consecutivos de ${cantidad} es = ${sumas}` );
 }
 /*
 Ejercicio 4:

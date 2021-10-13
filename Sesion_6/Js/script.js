@@ -370,3 +370,53 @@ const cartShoppings = [
   }
 ]
 
+const getType = (carritoDeCompras, argumento) => {
+  const coincidencias = []
+
+  carritoDeCompras.forEach((producto) => {
+    if (producto.type === argumento) coincidencias.push(producto)
+  })
+
+  console.log(coincidencias)
+
+  return `Encontramos ${coincidencias.length} productos del tipo ${argumento} en tu carrito de compras`
+}
+
+const sortProductsByValue = (carritoDeCompras) => {
+  const lessThanFifty = []
+  const morethanFifty = []
+
+  carritoDeCompras.forEach((producto) => {
+    if (producto.price < 50) {
+      lessThanFifty.push(producto)
+    } else morethanFifty.push(producto)
+  })
+
+  console.log(lessThanFifty)
+
+  console.log(morethanFifty)
+
+  return `Tu carrito tiene ${lessThanFifty.length} productos con un valor menor a $50MXN y ${morethanFifty.length} productos con un valor mayor o igual a $50MXN.`
+}
+
+const sumTotalCartPrice = (carritoDeCompras) => {
+  let precioTotal = 0
+
+  carritoDeCompras.forEach((producto) => {
+    precioTotal += producto.price
+  })
+
+  return `El valor total de los productos de tu carrito es de $${precioTotal}MXN`
+}
+
+const sumTypeTotal = (carritoDeCompras, argumento) => {
+  let precioTotal = 0
+
+  carritoDeCompras.forEach((producto) => {
+    if (producto.type === argumento) precioTotal += producto.price
+  })
+
+  return `El valor total de los productos del tipo ${argumento} en tu carrito es de $${precioTotal.toFixed(
+    2
+  )}MXN`
+}
