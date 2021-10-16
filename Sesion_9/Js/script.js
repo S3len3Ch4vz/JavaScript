@@ -19,7 +19,53 @@ if ( property in person){
 }
 
 //console.log(person)
+/* -------------------------------------------------------------------------- */
+/*                               Spread Operator                              */
+/* -------------------------------------------------------------------------- */
+/* ------------------------ Spread Operator on Arrays ----------------------- */
 
+const otherNumbers = [3, 56, 78]
+
+const numbers = [1, 2, ...otherNumbers, 345]
+const numbersWithoutSpread = [1, 2, otherNumbers, 345]
+
+console.log(numbers)
+console.log(numbersWithoutSpread)
+
+/* ----------------------- Spread operator on Objects ----------------------- */
+
+const person2 = {
+  nombre: "Luisito",
+  apellido: "Comunica",
+  direccion: "direccion random",
+}
+
+const addressPerson2 = {
+  avenue: "",
+  number: "120",
+  cp: "55029",
+}
+
+//Fuse both person2 and addressPerson2 properties in a new obj
+const userData = { ...person2, ...addressPerson2 }
+
+console.log(userData) // {with prop from 2 previous objects}
+
+//Destructure an object
+
+// const { avenue, number } = addressPerson2
+//returns
+
+const { avenue, number, cp, ...rest } = addressPerson2
+console.log(addressPerson2)
+//returns
+
+function getProp(addressPerson2) {
+  const { avenue } = addressPerson2
+  console.log(avenue, "avenue")
+}
+
+getProp(addressPerson2)
 
 /* --------------- Ejercicos con metodos Map, filter y Reduce --------------- */
 /*
@@ -104,3 +150,11 @@ const songsData = [
 */
 
 //- Agrupar los nombres de la bandas, que no esten repetidas 
+const filterBandsReduce = () => {
+    const reducedBands = songsData.reduce((bands, current) => {
+      return bands.includes(current.band) ? bands : bands.concat(current.band)
+    }, [])
+    return reducedBands
+  }
+
+  

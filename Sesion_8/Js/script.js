@@ -49,11 +49,7 @@ const getCoverageBySignature2 = (mentors) => {
     });
     // console.log(signatures, 'signatures')
 
-    return {
-        html,
-        css, 
-        js,
-        reactJs
+    return getCoverageBySignatyre2
     };
 };
 
@@ -106,7 +102,7 @@ console.log(newArrayMentors)
 const useMap = newArrayMentors.map((mentors) => {
  
 })
-// console.log(useMap, 'useMao')
+// console.log(useMap, 'useMap')
 
 'The Cure'
 
@@ -292,4 +288,59 @@ let songsData = [
     }
   ]
 
+  /* -------------- const coverageByMentor = (mentorsArray) => { 
+    const newMentors = [];
+    mentorsArray.forEach((mentor) => {
+        let coverage = 0;
+        mentor.scores.forEach((mentorData ) => {
+            coverage += mentorData.score / mentor.scores.length;
+        });
+        console.log(coverage)
+        newMentors.push({ name: mentor.name, coverage})
+    });
+    return newMentors;
+};
 
+console.log(coverageByMentor(mentorsArray))
+-------------- */
+
+
+
+//crear un array de strings con la siguiente forma:
+  //     "Mi nombre es {nombre} y mi promedio es de {promedio}"
+  const newArrayMentors = coverageByMentor(mentorsArray);
+  console.log(newArrayMentors);
+  const useMap = newArrayMentors.map((mentors) => {
+   
+    return {newName: mentors.name};
+  })
+console.log(useMap, 'useMap');
+
+//Obtener la lista de mentores cuyo promedio sea mayor a 9.5 
+
+const getNewFilter = () => {
+
+    const newMentors = coverageByMentor(mentorsArray);
+    const newMentors = [];
+    console.log(newMentors);
+    const Filter = newMentors.filter((mentor) => mentor.coverage > 9.5);
+    
+    return Filter;
+}
+console.log(getNewFilter());
+
+//Obtener el promedio individual de cada mentor
+
+const coverageByMentor = (mentorsArray) => {
+
+    const newMentors = mentorsArray.map((mentor) => {
+        let coverage = 0;
+        mentor.scores.forEach(mentorsData => {
+            coverage += mentorsData.score / mentor.scores.lenght
+            
+        });
+     return { name: mentor.name, coverage };
+    });
+    return newMentors;
+}; 
+console.log(coverageByMentor(mentorsArray));
